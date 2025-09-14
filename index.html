@@ -2,7 +2,7 @@
 <html lang="en-au">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Patrick Johnson — Résumé</title>
   <meta name="description" content="Résumé of Patrick Johnson: mathematics educator and data professional." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📄</text></svg>">
@@ -14,40 +14,56 @@
       :root { --bg:#0b1220; --text:#e5e7eb; --muted:#94a3b8; --card:#0f172a; --accent:#60a5fa; --border:#1f2937; --chip:#111827; }
     }
     html, body { height: 100%; }
-    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); line-height: 1.6; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
-    header { display: grid; gap: 1rem; align-items: center; grid-template-columns: 1fr; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+
+    header { position: sticky; top: 0; z-index: 1000; background: var(--bg); display: grid; gap: 1rem; align-items: center; grid-template-columns: 1fr; padding: .75rem 0; border-bottom: 1px solid var(--border); }
     @media (min-width: 900px) { header { grid-template-columns: 1fr auto; } }
-    .title { font-size: clamp(1.8rem, 1.6rem + 1.2vw, 2.6rem); font-weight: 800; margin: 0; }
-    .subtitle { color: var(--muted); margin: .25rem 0 0; font-weight: 500; }
-    .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: .55rem .9rem; border-radius: .7rem; text-decoration: none; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+
+    .title { font-size: clamp(1.6rem, 1.4rem + 1.2vw, 2.3rem); font-weight: 800; margin: 0; }
+    .subtitle { color: var(--muted); margin: .25rem 0 0; font-weight: 500; font-size: 1rem; }
+    .actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .5rem; }
+    .btn { flex: 1 1 auto; justify-content: center; text-align: center; min-width: 120px; display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: .55rem .9rem; border-radius: .7rem; text-decoration: none; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,.04); font-size: .95rem; }
     .btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
     .btn:hover { filter: brightness(1.03); }
+
     main { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 1.5rem; }
     @media (min-width: 960px) { main { grid-template-columns: 2fr 1fr; align-items: start; } }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem; overflow-wrap: break-word; }
     h2 { font-size: 1.1rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); margin: 0 0 .75rem; }
     h3 { margin: .25rem 0; font-size: 1.05rem; }
     .muted { color: var(--muted); }
     .item { padding: .65rem .75rem; border-left: 3px solid var(--border); border-radius: .5rem; }
     .item + .item { margin-top: .3rem; }
     .meta { display: flex; gap: .5rem; flex-wrap: wrap; color: var(--muted); font-size: .95rem; }
-    ul { margin: .4rem 0 .2rem 1.1rem; }
+    ul { margin: .4rem 0 .2rem 1.1rem; padding-left: 1rem; }
     .chips { display: flex; flex-wrap: wrap; gap: .4rem .5rem; }
-    .chip { background: var(--chip); border: 1px solid var(--border); padding: .25rem .55rem; border-radius: 999px; font-size: .9rem; }
-    footer { color: var(--muted); text-align: center; margin-top: 2rem; }
-    .print-note { text-align: center; margin-top: .75rem; font-size: .92rem; color: var(--muted); }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding: .25rem .55rem; border-radius: 999px; font-size: .85rem; }
+    footer { color: var(--muted); text-align: center; margin-top: 2rem; font-size: .85rem; }
+    .print-note { text-align: center; margin-top: .75rem; font-size: .9rem; color: var(--muted); }
     .list-compact li { margin-bottom: .35rem; }
-    .contact a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--border); }
+    .contact a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--border); word-break: break-word; }
 
-    /* --- PRINT (A4, modern single-page) --- */
+    /* Mobile specific adjustments */
+    @media (max-width: 600px) {
+      .container { padding: 1rem .75rem 3rem; }
+      .title { font-size: 1.8rem; }
+      .subtitle { font-size: .95rem; }
+      .btn { flex: 1 1 100%; font-size: .9rem; padding: .5rem .75rem; }
+      h2 { font-size: 1rem; }
+      h3 { font-size: .95rem; }
+      .meta { font-size: .85rem; }
+      .chip { font-size: .8rem; padding: .2rem .5rem; }
+    }
+
+    /* PRINT */
     @media print {
       @page { size: A4; margin: 14mm; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #fff; color: #111827; font-size: 11.25pt; line-height: 1.45; }
-      .actions, .print-note, footer { display: none !important; }
+      .actions, .print-note, footer, .chips { display: none !important; }
       .container { max-width: 100%; padding: 0; }
-      header { grid-template-columns: 1fr; padding-bottom: 6mm; margin-bottom: 6mm; border-bottom: 1px solid #d1d5db; }
+      header { grid-template-columns: 1fr; padding-bottom: 6mm; margin-bottom: 6mm; border-bottom: 1px solid #d1d5db; position: static; }
       .title { font-size: 22pt; margin-bottom: 1mm; }
       .subtitle, .contact { font-size: 10.5pt; }
       main { display: block; }
@@ -57,8 +73,6 @@
       .item { padding: 0; border: none; margin: 0 0 3mm; break-inside: avoid; }
       .meta { font-size: 10pt; color: #6b7280; margin-bottom: 1.5mm; }
       ul { margin: 1mm 0 0 4.5mm; }
-      .chips { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-top: 1mm; }
-      .chip { border: 1px solid #9ca3af; padding: 1.5mm 3.5mm; border-radius: 999px; font-size: 9.8pt; background: #f3f4f6; color: #111827; break-inside: avoid; }
       section, .item { page-break-inside: avoid; }
     }
   </style>
@@ -71,8 +85,8 @@
         <p class="subtitle">Mathematics Educator • Data &amp; Insights Lead</p>
         <p class="contact muted">
           <strong>Mobile:</strong> <a href="tel:+61434261661">0434&nbsp;261&nbsp;661</a> &nbsp;•&nbsp;
-          <strong>Email:</strong> <a href="mailto:patrickjohnson.pm@gmail.com">patrickjohnson.pm@gmail.com</a><br>
-          <strong>Website:</strong> <a href="https://patrickjohnsonpm.github.io/resume/">https://patrickjohnsonpm.github.io/resume</a> 
+          <strong>Email:</strong> <a href="mailto:patrickjohnson.pm@gmail.com">patrickjohnson.pm@gmail.com</a>
+        </p>
       </div>
       <div class="actions">
         <a class="btn primary" href="#" onclick="window.print();return false;" aria-label="Print résumé">🖨️ Print / Save as PDF</a>
@@ -83,17 +97,9 @@
     <main>
       <section class="card">
         <h2>Professional Summary</h2>
-<!--        <p>
-          I am a passionate and hard working mathematics teacher who strives to impart deep mathematical knowledge and understanding to my students.  My core values include a desire to give all students the chance to achieve to the best of their abilities by providing support to students who struggle while also providing opportunties for more advanced students to strive for excellence.  I believe education to be one of the strongest forces to promote social justice and provide life changing opportunities to students in our societies, and as such feel privileged to have been involved in the profession.  I value the chance to teach and thus contribute to the education of students, and within my classroom, promote a safe and supportive atmosphere.  I believe I can be an excellent role model to students and would hope to contribute both to the academic and cultural life of any school communitiy that I am involved with.
-        </p>  
-          <br>
-        <p></p>
-          After teaching in a wide variety of contexts over my ten years as a teacher, I made the decision to move into the private sector, and have worked as a data analyst using cutting edge tools over the past seven years.  I believe applying my deep knowledge in mathematics to real world industry problems will enable me to impart a sense of importance on the subject material that I deliver.  Encouraging the use of new technologies in the teaching of mathematics is fundamental to preparing the next generation of students in a variety of technical fields.          Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement, leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading teams, designing curricula, and delivering actionable data insights at scale.
+        <p>
+          Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement, leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading teams, designing curricula, and delivering actionable data insights at scale.
         </p>
--->        
-                <p>
-                  Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement, leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading teams, designing curricula, and delivering actionable data insights at scale.   
-                </p>      
       </section>
 
       <section class="card">
