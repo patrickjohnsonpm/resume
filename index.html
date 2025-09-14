@@ -4,34 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Patrick Johnson — Résumé</title>
-  <meta name="description" content="Résumé of Patrick Johnson: mathematics educator and data & insights lead." />
+  <meta name="description" content="Résumé of Patrick Johnson: mathematics educator and data professional." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📄</text></svg>">
   <style>
     :root {
-      --bg: #f7f7fb;
-      --text: #0f172a;
-      --muted: #475569;
-      --card: #ffffff;
-      --accent: #2563eb;
-      --border: #e5e7eb;
-      --chip: #eef2ff;
+      --bg: #f7f7fb; --text: #0f172a; --muted: #475569; --card: #ffffff; --accent: #2563eb; --border: #e5e7eb; --chip: #eef2ff;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --text: #e5e7eb;
-        --muted: #94a3b8;
-        --card: #0f172a;
-        --accent: #60a5fa;
-        --border: #1f2937;
-        --chip: #111827;
-      }
+      :root { --bg:#0b1220; --text:#e5e7eb; --muted:#94a3b8; --card:#0f172a; --accent:#60a5fa; --border:#1f2937; --chip:#111827; }
     }
     html, body { height: 100%; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg); color: var(--text); line-height: 1.6;
-    }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); line-height: 1.6; }
     .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
     header { display: grid; gap: 1rem; align-items: center; grid-template-columns: 1fr; }
     @media (min-width: 900px) { header { grid-template-columns: 1fr auto; } }
@@ -47,8 +30,6 @@
     h2 { font-size: 1.1rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); margin: 0 0 .75rem; }
     h3 { margin: .25rem 0; font-size: 1.05rem; }
     .muted { color: var(--muted); }
-    .row { display: grid; grid-template-columns: 1fr; gap: .5rem; }
-    @media (min-width: 640px) { .row { grid-template-columns: 1fr 1fr; } }
     .item { padding: .65rem .75rem; border-left: 3px solid var(--border); border-radius: .5rem; }
     .item + .item { margin-top: .3rem; }
     .meta { display: flex; gap: .5rem; flex-wrap: wrap; color: var(--muted); font-size: .95rem; }
@@ -60,15 +41,24 @@
     .list-compact li { margin-bottom: .35rem; }
     .contact a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--border); }
 
-    /* Print styles */
+    /* --- PRINT (A4, modern single-page) --- */
     @media print {
+      @page { size: A4; margin: 12mm; }
+      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body { background: #fff; color: #111827; font-size: 11.25pt; line-height: 1.45; }
       .actions, .print-note, footer { display: none !important; }
-      body { background: white; }
       .container { max-width: 100%; padding: 0; }
-      .card { border: none; box-shadow: none; padding: 0; }
-      main { grid-template-columns: 1.5fr 1fr; gap: 1rem; }
-      h2 { margin-top: .5rem; }
-      .item { border-left-color: #999; }
+      header { grid-template-columns: 1fr; padding-bottom: 6mm; margin-bottom: 6mm; border-bottom: 1px solid #d1d5db; }
+      .title { font-size: 22pt; margin-bottom: 1mm; }
+      .subtitle, .contact { font-size: 10.5pt; }
+      main { display: grid; grid-template-columns: 1fr; gap: 5mm; }
+      .card { background: transparent; border: none; padding: 0; box-shadow: none; }
+      h2 { font-size: 10.5pt; color: #374151; margin: 0 0 2mm; letter-spacing: .08em; }
+      h3 { font-size: 11pt; margin: 0; }
+      .item { padding: 0; border: none; margin: 0 0 3mm; break-inside: avoid; }
+      .meta { font-size: 10pt; color: #6b7280; margin-bottom: 1.5mm; }
+      ul { margin: 1mm 0 0 4.5mm; }
+      .chips { display: none; }
     }
   </style>
   <script type="application/ld+json">
@@ -76,7 +66,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Patrick Johnson",
-    "jobTitle": "Mathematics Educator & Data and Insights Lead",
+    "jobTitle": "Mathematics Educator & Data Professional",
     "email": "mailto:patrickjohnson.pm@gmail.com",
     "telephone": "+61-434-261-661",
     "address": {"@type":"PostalAddress","addressCountry":"AU"}
@@ -101,7 +91,7 @@
     </header>
 
     <main>
-      <!-- Left column: Summary + Experience -->
+      <!-- Summary -->
       <section class="card">
         <h2>Professional Summary</h2>
         <p>
@@ -113,6 +103,7 @@
         </p>
       </section>
 
+      <!-- Skills -->
       <aside class="card">
         <h2>Key Skills</h2>
         <div class="chips">
@@ -129,43 +120,54 @@
         </div>
       </aside>
 
+      <!-- Experience -->
       <section id="experience" class="card" style="grid-column: 1 / -1">
         <h2>Professional Experience</h2>
 
         <div class="item">
-          <h3>Data &amp; Insights Lead — RACQ</h3>
-          <div class="meta">2017 – Present</div>
+          <h3>Mathematics &amp; Senior Physics Teacher — Brisbane South State Secondary College</h3>
+          <div class="meta">2025 – Present</div>
           <ul class="list-compact">
-            <li>Develop and implement advanced forecasting and budgeting models using statistical and machine learning techniques.</li>
-            <li>Build monitoring and reporting tools providing real-time business performance insights.</li>
-            <li>Support system implementations and ensure data integrity across core platforms.</li>
-            <li>Deliver ad‑hoc portfolio analysis to guide product development and refine performance.</li>
+            <li>IB Mathematics: Analysis &amp; Approaches — developed and delivered unit plans and resources for the foundation cohort.</li>
+            <li>Senior Physics (QCAA) — collaborated on unit planning and resources for the foundation cohort.</li>
+            <li>Middle School Mathematics &amp; Science — contributed to ongoing refinement of units; day‑to‑day implementation lead.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Data &amp; Insights Lead Analyst — RACQ</h3>
+          <div class="meta">2017 – 2024</div>
+          <ul class="list-compact">
+            <li>Developed forecasting and budgeting models using statistical and machine‑learning techniques.</li>
+            <li>Built monitoring and reporting tools for real‑time performance insights.</li>
+            <li>Supported implementation and data‑integrity assurance across core platforms.</li>
+            <li>Delivered ad‑hoc portfolio analysis to inform product development and performance optimisation.</li>
           </ul>
         </div>
 
         <div class="item">
           <h3>Mathematics Teacher (IB MYP &amp; DP) — KIS International School</h3>
-          <div class="meta">Bangkok, Thailand &nbsp;|&nbsp; 2015 – 2017</div>
+          <div class="meta">Bangkok, Thailand | 2015 – 2017</div>
           <ul class="list-compact">
-            <li>Taught Mathematics for the IB Middle Years and Diploma Programs.</li>
-            <li>Designed assessments, marking criteria, and curriculum documents aligned to IB frameworks.</li>
-            <li>Collaborated across departments on assessment policies and school‑wide performance analysis.</li>
+            <li>Taught Mathematics in the IB Middle Years and Diploma Programmes.</li>
+            <li>Designed assessments, criteria, and curriculum documents aligned to IB frameworks.</li>
+            <li>Collaborated across departments on assessment policies and performance analysis.</li>
           </ul>
         </div>
 
         <div class="item">
           <h3>VCE Coordinator — Dili International School</h3>
-          <div class="meta">Timor‑Leste &nbsp;|&nbsp; 2011 – 2014</div>
+          <div class="meta">Timor‑Leste | 2011 – 2014</div>
           <ul class="list-compact">
-            <li>Led senior school operations; liaised with Australian partner schools to ensure academic quality.</li>
-            <li>Implemented exam policies and student data management systems; produced study programs.</li>
-            <li>Coordinated teacher mentoring and special-needs support; aligned cross‑border curricula.</li>
+            <li>Led senior‑school operations; liaison with Australian partner schools to ensure quality.</li>
+            <li>Implemented examination policies and student data‑management systems; produced study programs.</li>
+            <li>Coordinated teacher mentoring, special‑needs support, and cross‑border curriculum alignment.</li>
           </ul>
         </div>
 
         <div class="item">
           <h3>Head of Department (Mathematics) — Our Lady of the Sacred Heart College</h3>
-          <div class="meta">Alice Springs, NT &nbsp;|&nbsp; 2007 – 2011</div>
+          <div class="meta">Alice Springs, NT | 2007 – 2011</div>
           <ul class="list-compact">
             <li>Directed Years 9–12 Mathematics curriculum development and assessment frameworks.</li>
             <li>Managed a teaching team; delivered PD and constructed teaching resources.</li>
@@ -174,7 +176,7 @@
         </div>
       </section>
 
-      <!-- Right column continued: Education & Referees -->
+      <!-- Education -->
       <section class="card">
         <h2>Education</h2>
         <div class="item">
@@ -200,27 +202,27 @@
         </div>
       </section>
 
+      <!-- Referees -->
       <section class="card">
         <h2>Referees</h2>
+        <div class="item">
+          <h3>Chris Powell</h3>
+          <div class="meta">Head of Department (Mathematics) — Brisbane South State Secondary College</div>
+          <div class="muted">📱 0417 557 222</div>
+        </div>
         <div class="item">
           <h3>Keiren Curnow</h3>
           <div class="meta">Assistant Principal — Our Lady of the Sacred Heart College</div>
           <div class="muted">📱 0410 838 897</div>
         </div>
-        <div class="item">
-          <h3>Darren Guilfoyle</h3>
-          <div class="meta">Pricing Lead — RACQ</div>
-          <div class="muted">📱 0401 338 962</div>
-        </div>
       </section>
     </main>
 
-    <p class="print-note">Tip: Use the **Print / Save as PDF** button to export a one‑page PDF version.</p>
+    <p class="print-note">Tip: Use the **Print / Save as PDF** button to export a single‑page PDF.</p>
     <footer>© <span id="y"></span> Patrick Johnson. All rights reserved.</footer>
   </div>
 
   <script>
-    // Set year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
