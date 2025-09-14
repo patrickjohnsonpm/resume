@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Patrick Johnson — Résumé</title>
   <meta name="description" content="Résumé of Patrick Johnson: mathematics educator and data professional." />
-  <meta name="color-scheme" content="light dark" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📄</text></svg>">
   <style>
     :root {
@@ -42,13 +41,10 @@
     .list-compact li { margin-bottom: .35rem; }
     .contact a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--border); }
 
-    /* --- PRINT (A4) — compact, multi‑page if needed --- */
+    /* --- PRINT (A4, modern single-page) --- */
     @media print {
-      /* Most browsers show their own header/footer (URL/date/page numbers). CSS cannot fully remove them. 
-         Ask users to uncheck "Headers and footers" in the print dialog for a clean export. */
       @page { size: A4; margin: 14mm; }
-      * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      body { background: #fff; color: #111827; font-size: 11.25pt; line-height: 1.45; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #fff; color: #111827; font-size: 11.25pt; line-height: 1.45; }
       .actions, .print-note, footer { display: none !important; }
       .container { max-width: 100%; padding: 0; }
       header { grid-template-columns: 1fr; padding-bottom: 6mm; margin-bottom: 6mm; border-bottom: 1px solid #d1d5db; }
@@ -61,24 +57,11 @@
       .item { padding: 0; border: none; margin: 0 0 3mm; break-inside: avoid; }
       .meta { font-size: 10pt; color: #6b7280; margin-bottom: 1.5mm; }
       ul { margin: 1mm 0 0 4.5mm; }
-      /* Show SKILLS in print as compact chips */
       .chips { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-top: 1mm; }
       .chip { border: 1px solid #9ca3af; padding: 1.5mm 3.5mm; border-radius: 999px; font-size: 9.8pt; background: #f3f4f6; color: #111827; break-inside: avoid; }
-      /* Avoid awkward breaks */
       section, .item { page-break-inside: avoid; }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Patrick Johnson",
-    "jobTitle": "Mathematics Educator & Data Professional",
-    "email": "mailto:patrickjohnson.pm@gmail.com",
-    "telephone": "+61-434-261-661",
-    "address": {"@type":"PostalAddress","addressCountry":"AU"}
-  }
-  </script>
 </head>
 <body>
   <div class="container">
@@ -92,98 +75,19 @@
         </p>
       </div>
       <div class="actions">
-        <a class="btn primary" href="#" id="printBtn" aria-label="Print résumé">🖨️ Print / Save as PDF</a>
+        <a class="btn primary" href="#" onclick="window.print();return false;" aria-label="Print résumé">🖨️ Print / Save as PDF</a>
         <a class="btn" href="#experience" aria-label="Skip to experience">⬇️ Skip to Experience</a>
       </div>
     </header>
 
     <main>
-      <!-- Summary -->
       <section class="card">
         <h2>Professional Summary</h2>
         <p>
-          Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience
-          in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge
-          and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement,
-          leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading
-          teams, designing curricula, and delivering actionable data insights at scale.
+          Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement, leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading teams, designing curricula, and delivering actionable data insights at scale.
         </p>
       </section>
 
-      <!-- Skills -->
-      <aside class="card">
-        <h2>Key Skills</h2>
-        <div class="chips">
-          <span class="chip">Forecasting &amp; ML</span>
-          <span class="chip">Statistical Modelling</span>
-          <span class="chip">Python</span>
-          <span class="chip">SQL</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">HTML</span>
-          <span class="chip">Curriculum Design</span>
-          <span class="chip">Assessment &amp; Moderation</span>
-          <span class="chip">Stakeholder Communication</span>
-          <span class="chip">Team Leadership</span>
-        </div>
-      </aside>
-
-      <!-- Experience -->
-      <section id="experience" class="card" style="grid-column: 1 / -1">
-        <h2>Professional Experience</h2>
-
-        <div class="item">
-          <h3>Mathematics &amp; Senior Physics Teacher — Brisbane South State Secondary College</h3>
-          <div class="meta">2025 – Present</div>
-          <ul class="list-compact">
-            <li>IB Mathematics: Analysis &amp; Approaches — developed and delivered unit plans and resources for the foundation cohort.</li>
-            <li>Senior Physics (QCAA) — collaborated on unit planning and resources for the foundation cohort.</li>
-            <li>Middle School Mathematics &amp; Science — contributed to ongoing refinement of units; day‑to‑day implementation lead.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h3>Data &amp; Insights Lead Analyst — RACQ</h3>
-          <div class="meta">2017 – 2024</div>
-          <ul class="list-compact">
-            <li>Developed forecasting and budgeting models using statistical and machine‑learning techniques.</li>
-            <li>Built monitoring and reporting tools for real‑time performance insights.</li>
-            <li>Supported implementation and data‑integrity assurance across core platforms.</li>
-            <li>Delivered ad‑hoc portfolio analysis to inform product development and performance optimisation.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h3>Mathematics Teacher (IB MYP &amp; DP) — KIS International School</h3>
-          <div class="meta">Bangkok, Thailand | 2015 – 2017</div>
-          <ul class="list-compact">
-            <li>Taught Mathematics in the IB Middle Years and Diploma Programmes.</li>
-            <li>Designed assessments, criteria, and curriculum documents aligned to IB frameworks.</li>
-            <li>Collaborated across departments on assessment policies and performance analysis.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h3>VCE Coordinator — Dili International School</h3>
-          <div class="meta">Timor‑Leste | 2011 – 2014</div>
-          <ul class="list-compact">
-            <li>Led senior‑school operations; liaison with Australian partner schools to ensure quality.</li>
-            <li>Implemented examination policies and student data‑management systems; produced study programs.</li>
-            <li>Coordinated teacher mentoring, special‑needs support, and cross‑border curriculum alignment.</li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h3>Head of Department (Mathematics) — Our Lady of the Sacred Heart College</h3>
-          <div class="meta">Alice Springs, NT | 2007 – 2011</div>
-          <ul class="list-compact">
-            <li>Directed Years 9–12 Mathematics curriculum development and assessment frameworks.</li>
-            <li>Managed a teaching team; delivered PD and constructed teaching resources.</li>
-            <li>Taught Specialist Mathematics, Mathematical Methods, General Mathematics, Senior Physics, and Middle School Science.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Education -->
       <section class="card">
         <h2>Education</h2>
         <div class="item">
@@ -209,7 +113,72 @@
         </div>
       </section>
 
-      <!-- Referees -->
+      <aside class="card">
+        <h2>Key Skills</h2>
+        <div class="chips">
+          <span class="chip">Forecasting &amp; ML</span>
+          <span class="chip">Statistical Modelling</span>
+          <span class="chip">Python</span>
+          <span class="chip">SQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML</span>
+          <span class="chip">Curriculum Design</span>
+          <span class="chip">Assessment &amp; Moderation</span>
+          <span class="chip">Stakeholder Communication</span>
+          <span class="chip">Team Leadership</span>
+        </div>
+      </aside>
+
+      <section id="experience" class="card" style="grid-column: 1 / -1">
+        <h2>Professional Experience</h2>
+        <div class="item">
+          <h3>Mathematics &amp; Senior Physics Teacher — Brisbane South State Secondary College</h3>
+          <div class="meta">2025 – Present</div>
+          <ul class="list-compact">
+            <li>IB Mathematics: Analysis &amp; Approaches — developed and delivered unit plans and resources for the foundation cohort.</li>
+            <li>Senior Physics (QCAA) — collaborated on unit planning and resources for the foundation cohort.</li>
+            <li>Middle School Mathematics &amp; Science — contributed to ongoing refinement of units; day‑to‑day implementation lead.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Data &amp; Insights Lead Analyst — RACQ</h3>
+          <div class="meta">2017 – 2024</div>
+          <ul class="list-compact">
+            <li>Developed forecasting and budgeting models using statistical and machine‑learning techniques.</li>
+            <li>Built monitoring and reporting tools for real‑time performance insights.</li>
+            <li>Supported implementation and data‑integrity assurance across core platforms.</li>
+            <li>Delivered ad‑hoc portfolio analysis to inform product development and performance optimisation.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Mathematics Teacher (IB MYP &amp; DP) — KIS International School</h3>
+          <div class="meta">Bangkok, Thailand | 2015 – 2017</div>
+          <ul class="list-compact">
+            <li>Taught Mathematics in the IB Middle Years and Diploma Programmes.</li>
+            <li>Designed assessments, criteria, and curriculum documents aligned to IB frameworks.</li>
+            <li>Collaborated across departments on assessment policies and performance analysis.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>VCE Coordinator — Dili International School</h3>
+          <div class="meta">Timor‑Leste | 2011 – 2014</div>
+          <ul class="list-compact">
+            <li>Led senior‑school operations; liaison with Australian partner schools to ensure quality.</li>
+            <li>Implemented examination policies and student data‑management systems; produced study programs.</li>
+            <li>Coordinated teacher mentoring, special‑needs support, and cross‑border curriculum alignment.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <h3>Head of Department (Mathematics) — Our Lady of the Sacred Heart College</h3>
+          <div class="meta">Alice Springs, NT | 2007 – 2011</div>
+          <ul class="list-compact">
+            <li>Directed Years 9–12 Mathematics curriculum development and assessment frameworks.</li>
+            <li>Managed a teaching team; delivered PD and constructed teaching resources.</li>
+            <li>Taught Specialist Mathematics, Mathematical Methods, General Mathematics, Senior Physics, and Middle School Science.</li>
+          </ul>
+        </div>
+      </section>
+
       <section class="card">
         <h2>Referees</h2>
         <div class="item">
@@ -225,22 +194,9 @@
       </section>
     </main>
 
-    <p class="print-note">Tip: For a clean PDF in Chrome: click **Print / Save as PDF** → **More settings** → **uncheck "Headers and footers"**.</p>
+    <p class="print-note">Tip: Use the **Print / Save as PDF** button to export.</p>
     <footer>© <span id="y"></span> Patrick Johnson. All rights reserved.</footer>
   </div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    document.getElementById('printBtn').addEventListener('click', function (e) {
-      e.preventDefault();
-      // Optional inline reminder for header/footer toggle
-      const note = document.createElement('div');
-      note.textContent = 'In the print dialog, turn OFF "Headers and footers" for a clean export.';
-      Object.assign(note.style, {position:'fixed', bottom:'12px', left:'12px', background:'rgba(17,24,39,0.9)', color:'#fff', padding:'8px 10px', borderRadius:'8px', zIndex:'99999', fontSize:'12px'});
-      document.body.appendChild(note);
-      setTimeout(()=>window.print(), 60);
-      setTimeout(()=>note.remove(), 4000);
-    });
-  </script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
