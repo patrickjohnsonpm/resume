@@ -4,69 +4,48 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Patrick Johnson — Résumé</title>
+  <meta name="description" content="Résumé of Patrick Johnson: mathematics educator and data professional." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📄</text></svg>">
   <style>
     :root {
-      --text: #222;
-      --muted: #555;
-      --accent: #2563eb;
+      --bg: #f7f7fb; --text: #0f172a; --muted: #475569; --card: #ffffff; --accent: #2563eb; --border: #e5e7eb; --chip: #eef2ff;
     }
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: white;
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 11pt;
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0b1220; --text:#e5e7eb; --muted:#94a3b8; --card:#0f172a; --accent:#60a5fa; --border:#1f2937; --chip:#111827; }
     }
-    .page {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 2cm;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 1.5em;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
-      font-weight: 700;
-    }
-    header p {
-      margin: .2em 0;
-      color: var(--muted);
-    }
-    h2 {
-      font-size: 1.1em;
-      margin-top: 1.6em;
-      margin-bottom: .4em;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: .15em;
-    }
-    h3 {
-      margin: .2em 0;
-      font-size: 1em;
-      font-weight: 600;
-    }
-    .meta {
-      font-size: .9em;
-      color: var(--muted);
-    }
-    ul {
-      margin: .3em 0 0 1.2em;
-      padding: 0;
-    }
-    ul li {
-      margin-bottom: .25em;
-    }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1cm;
-    }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+    header { display: grid; gap: 1rem; align-items: center; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { header { grid-template-columns: 1fr auto; } }
+    .title { font-size: clamp(1.8rem, 1.6rem + 1.2vw, 2.6rem); font-weight: 800; margin: 0; }
+    .subtitle { color: var(--muted); margin: .25rem 0 0; font-weight: 500; }
+    .actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; border: 1px solid var(--border); background: var(--card); color: var(--text); padding: .55rem .9rem; border-radius: .7rem; text-decoration: none; font-weight: 600; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: white; }
+    .btn:hover { filter: brightness(1.03); }
+    main { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+    @media (min-width: 960px) { main { grid-template-columns: 2fr 1fr; align-items: start; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.25rem; }
+    h2 { font-size: 1.1rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); margin: 0 0 .75rem; }
+    h3 { margin: .25rem 0; font-size: 1.05rem; }
+    .muted { color: var(--muted); }
+    .item { padding: .65rem .75rem; border-left: 3px solid var(--border); border-radius: .5rem; }
+    .item + .item { margin-top: .3rem; }
+    .meta { display: flex; gap: .5rem; flex-wrap: wrap; color: var(--muted); font-size: .95rem; }
+    ul { margin: .4rem 0 .2rem 1.1rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: .4rem .5rem; }
+    .chip { background: var(--chip); border: 1px solid var(--border); padding: .25rem .55rem; border-radius: 999px; font-size: .9rem; }
+    footer { color: var(--muted); text-align: center; margin-top: 2rem; }
+    .print-note { text-align: center; margin-top: .75rem; font-size: .92rem; color: var(--muted); }
+    .list-compact li { margin-bottom: .35rem; }
+    .contact a { color: inherit; text-decoration: none; border-bottom: 1px dashed var(--border); }
+
+    /* --- PRINT (A4) — compact, multi‑page if needed --- */
     @media print {
+      /* Most browsers show their own header/footer (URL/date/page numbers). CSS cannot fully remove them. 
+         Ask users to uncheck "Headers and footers" in the print dialog for a clean export. */
       @page { size: A4; margin: 14mm; }
       * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       body { background: #fff; color: #111827; font-size: 11.25pt; line-height: 1.45; }
@@ -82,129 +61,186 @@
       .item { padding: 0; border: none; margin: 0 0 3mm; break-inside: avoid; }
       .meta { font-size: 10pt; color: #6b7280; margin-bottom: 1.5mm; }
       ul { margin: 1mm 0 0 4.5mm; }
-      /* SHOW skills on print and keep them compact */
+      /* Show SKILLS in print as compact chips */
       .chips { display: flex; flex-wrap: wrap; gap: 2.5mm; margin-top: 1mm; }
       .chip { border: 1px solid #9ca3af; padding: 1.5mm 3.5mm; border-radius: 999px; font-size: 9.8pt; background: #f3f4f6; color: #111827; break-inside: avoid; }
-      /* Allow content to flow to a second page cleanly */
+      /* Avoid awkward breaks */
       section, .item { page-break-inside: avoid; }
     }
-      .page { padding: 1.2cm; }
-      header h1 { font-size: 1.6em; }
-      .two-col { grid-template-columns: 1fr 1fr; }
-    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Patrick Johnson",
+    "jobTitle": "Mathematics Educator & Data Professional",
+    "email": "mailto:patrickjohnson.pm@gmail.com",
+    "telephone": "+61-434-261-661",
+    "address": {"@type":"PostalAddress","addressCountry":"AU"}
+  }
+  </script>
 </head>
 <body>
-  <div class="page">
+  <div class="container">
     <header>
-      <h1>Patrick Johnson</h1>
-      <p>Mobile: 0434 261 661 · Email: patrickjohnson.pm@gmail.com</p>
+      <div>
+        <h1 class="title">Patrick Johnson</h1>
+        <p class="subtitle">Mathematics Educator • Data &amp; Insights Lead</p>
+        <p class="contact muted">
+          <strong>Mobile:</strong> <a href="tel:+61434261661">0434&nbsp;261&nbsp;661</a> &nbsp;•&nbsp;
+          <strong>Email:</strong> <a href="mailto:patrickjohnson.pm@gmail.com">patrickjohnson.pm@gmail.com</a>
+        </p>
+      </div>
+      <div class="actions">
+        <a class="btn primary" href="#" id="printBtn" aria-label="Print résumé">🖨️ Print / Save as PDF</a>
+        <a class="btn" href="#experience" aria-label="Skip to experience">⬇️ Skip to Experience</a>
+      </div>
     </header>
 
-    <section>
-      <h2>Professional Summary</h2>
-      <p>I am a passionate and hard working mathematics teacher who strives to impart deep mathematical knowledge and understanding to my students. My core values include a desire to give all students the chance to achieve to the best of their abilities by providing support to students who struggle while also providing opportunities for more advanced students to strive for excellence. I believe education to be one of the strongest forces to promote social justice and provide life changing opportunities to students in our societies, and as such feel privileged to have been involved in the profession.</p>
-      <p>After teaching in a wide variety of contexts over my ten years as a teacher, I moved into the private sector, working as a data analyst using cutting edge tools over the past seven years. I believe applying my deep knowledge in mathematics to real world industry problems enables me to impart a sense of importance on the subject material that I deliver. Encouraging the use of new technologies in the teaching of mathematics is fundamental to preparing the next generation of students in technical fields.</p>
-    </section>
+    <main>
+      <!-- Summary -->
+      <section class="card">
+        <h2>Professional Summary</h2>
+        <p>
+          Passionate and dedicated Mathematics educator and data professional with over 15 years’ combined experience
+          in teaching, curriculum leadership, and data analytics. Skilled in applying advanced mathematical knowledge
+          and analytical tools to both classroom teaching and industry challenges. Committed to fostering student achievement,
+          leveraging technology for learning, and contributing to educational excellence and equity. Experienced in leading
+          teams, designing curricula, and delivering actionable data insights at scale.
+        </p>
+      </section>
 
-    <section>
-      <h2>Education</h2>
-      <div>
-        <h3>Master of Quantum Technology (Current)</h3>
-        <div class="meta">University of Queensland</div>
-      </div>
-      <div>
-        <h3>Diploma in Actuarial Techniques</h3>
-        <div class="meta">Institute and Faculty of Actuaries (UK), 2016</div>
-      </div>
-      <div>
-        <h3>Bachelor of Science (Mathematics) — 1st Class Honours</h3>
-        <div class="meta">Charles Darwin University, 2009</div>
-        <div class="meta">Honours research: Combinatorial design</div>
-      </div>
-      <div>
-        <h3>Bachelor of Education (Senior &amp; Middle Schooling)</h3>
-        <div class="meta">University of Southern Queensland, 2006</div>
-      </div>
-      <div>
-        <h3>Bachelor of Science (Mathematics &amp; Physics)</h3>
-        <div class="meta">University of Queensland, 2001</div>
-      </div>
-    </section>
+      <!-- Skills -->
+      <aside class="card">
+        <h2>Key Skills</h2>
+        <div class="chips">
+          <span class="chip">Forecasting &amp; ML</span>
+          <span class="chip">Statistical Modelling</span>
+          <span class="chip">Python</span>
+          <span class="chip">SQL</span>
+          <span class="chip">JavaScript</span>
+          <span class="chip">HTML</span>
+          <span class="chip">Curriculum Design</span>
+          <span class="chip">Assessment &amp; Moderation</span>
+          <span class="chip">Stakeholder Communication</span>
+          <span class="chip">Team Leadership</span>
+        </div>
+      </aside>
 
-    <section>
-      <h2>Experience</h2>
-      <div>
-        <h3>Mathematics Teacher — Brisbane South State Secondary College</h3>
-        <div class="meta">2025 – Present</div>
-        <ul>
-          <li>IB Mathematics (Analysis &amp; Approaches) teacher; developed and delivered foundational unit plans.</li>
-          <li>Senior Physics (QCAA) teacher; collaborated on unit design and delivery for inaugural cohorts.</li>
-          <li>Middle School Mathematics and Science teacher; contributed to curriculum refinement and day-to-day coordination.</li>
-        </ul>
-      </div>
+      <!-- Experience -->
+      <section id="experience" class="card" style="grid-column: 1 / -1">
+        <h2>Professional Experience</h2>
 
-      <div>
-        <h3>Data &amp; Insights Lead Analyst — RACQ</h3>
-        <div class="meta">2017 – 2024</div>
-        <ul>
-          <li>Developed forecasting and budgeting models using machine learning and statistical techniques.</li>
-          <li>Created monitoring and reporting tools for real-time portfolio performance tracking.</li>
-          <li>Ensured integrity of core systems during implementations.</li>
-          <li>Produced ad‑hoc portfolio analysis to support product development and optimisation.</li>
-        </ul>
-      </div>
+        <div class="item">
+          <h3>Mathematics &amp; Senior Physics Teacher — Brisbane South State Secondary College</h3>
+          <div class="meta">2025 – Present</div>
+          <ul class="list-compact">
+            <li>IB Mathematics: Analysis &amp; Approaches — developed and delivered unit plans and resources for the foundation cohort.</li>
+            <li>Senior Physics (QCAA) — collaborated on unit planning and resources for the foundation cohort.</li>
+            <li>Middle School Mathematics &amp; Science — contributed to ongoing refinement of units; day‑to‑day implementation lead.</li>
+          </ul>
+        </div>
 
-      <div>
-        <h3>Mathematics Teacher — KIS International School, Bangkok</h3>
-        <div class="meta">2015 – 2017</div>
-        <ul>
-          <li>Taught IB MYP General Mathematics and IB DP Mathematical Methods.</li>
-          <li>Collaborated to design curriculum and assessment documents aligned to IB frameworks.</li>
-          <li>Analysed performance data to inform scope and sequencing.</li>
-        </ul>
-      </div>
+        <div class="item">
+          <h3>Data &amp; Insights Lead Analyst — RACQ</h3>
+          <div class="meta">2017 – 2024</div>
+          <ul class="list-compact">
+            <li>Developed forecasting and budgeting models using statistical and machine‑learning techniques.</li>
+            <li>Built monitoring and reporting tools for real‑time performance insights.</li>
+            <li>Supported implementation and data‑integrity assurance across core platforms.</li>
+            <li>Delivered ad‑hoc portfolio analysis to inform product development and performance optimisation.</li>
+          </ul>
+        </div>
 
-      <div>
-        <h3>VCE Coordinator — Dili International School, Timor‑Leste</h3>
-        <div class="meta">2011 – 2014</div>
-        <ul>
-          <li>Led senior school operations, liaised with Australian partner schools for quality control.</li>
-          <li>Implemented data and exam management policies.</li>
-          <li>Developed and oversaw study programs across senior subjects.</li>
-        </ul>
-      </div>
+        <div class="item">
+          <h3>Mathematics Teacher (IB MYP &amp; DP) — KIS International School</h3>
+          <div class="meta">Bangkok, Thailand | 2015 – 2017</div>
+          <ul class="list-compact">
+            <li>Taught Mathematics in the IB Middle Years and Diploma Programmes.</li>
+            <li>Designed assessments, criteria, and curriculum documents aligned to IB frameworks.</li>
+            <li>Collaborated across departments on assessment policies and performance analysis.</li>
+          </ul>
+        </div>
 
-      <div>
-        <h3>Head of Department (Mathematics) — Our Lady of the Sacred Heart College</h3>
-        <div class="meta">Alice Springs, NT | 2007 – 2011</div>
-        <ul>
-          <li>Directed Mathematics curriculum and assessment design for Years 9–12.</li>
-          <li>Managed a team of teachers, provided professional development, and created resources.</li>
-          <li>Taught Specialist Mathematics, Mathematical Methods, General Mathematics, Senior Physics, and Middle School Science.</li>
-        </ul>
-      </div>
-    </section>
+        <div class="item">
+          <h3>VCE Coordinator — Dili International School</h3>
+          <div class="meta">Timor‑Leste | 2011 – 2014</div>
+          <ul class="list-compact">
+            <li>Led senior‑school operations; liaison with Australian partner schools to ensure quality.</li>
+            <li>Implemented examination policies and student data‑management systems; produced study programs.</li>
+            <li>Coordinated teacher mentoring, special‑needs support, and cross‑border curriculum alignment.</li>
+          </ul>
+        </div>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Advanced research and analysis</li>
-        <li>Python, SQL, JavaScript, HTML</li>
-        <li>Data modelling &amp; machine learning</li>
-        <li>Curriculum design &amp; assessment</li>
-        <li>Strong communication &amp; leadership</li>
-        <li>Problem solving &amp; critical thinking</li>
-      </ul>
-    </section>
+        <div class="item">
+          <h3>Head of Department (Mathematics) — Our Lady of the Sacred Heart College</h3>
+          <div class="meta">Alice Springs, NT | 2007 – 2011</div>
+          <ul class="list-compact">
+            <li>Directed Years 9–12 Mathematics curriculum development and assessment frameworks.</li>
+            <li>Managed a teaching team; delivered PD and constructed teaching resources.</li>
+            <li>Taught Specialist Mathematics, Mathematical Methods, General Mathematics, Senior Physics, and Middle School Science.</li>
+          </ul>
+        </div>
+      </section>
 
-    <section>
-      <h2>Referees</h2>
-      <ul>
-        <li>Chris Powell — Head of Mathematics, Brisbane South SSC · 0417 557 222</li>
-        <li>Keiren Curnow — Assistant Principal, Our Lady of the Sacred Heart College · 0410 838 897</li>
-      </ul>
-    </section>
+      <!-- Education -->
+      <section class="card">
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Master of Quantum Technology <span class="muted">(in progress)</span></h3>
+          <div class="meta">University of Queensland</div>
+        </div>
+        <div class="item">
+          <h3>Diploma in Actuarial Techniques</h3>
+          <div class="meta">Institute and Faculty of Actuaries (UK), 2016</div>
+        </div>
+        <div class="item">
+          <h3>BSc (Mathematics) — First Class Honours</h3>
+          <div class="meta">Charles Darwin University, 2009</div>
+          <p class="muted">Honours research in combinatorial design.</p>
+        </div>
+        <div class="item">
+          <h3>Bachelor of Education (Senior &amp; Middle Schooling)</h3>
+          <div class="meta">University of Southern Queensland, 2006</div>
+        </div>
+        <div class="item">
+          <h3>BSc (Mathematics &amp; Physics)</h3>
+          <div class="meta">University of Queensland, 2001</div>
+        </div>
+      </section>
+
+      <!-- Referees -->
+      <section class="card">
+        <h2>Referees</h2>
+        <div class="item">
+          <h3>Chris Powell</h3>
+          <div class="meta">Head of Department (Mathematics) — Brisbane South State Secondary College</div>
+          <div class="muted">📱 0417 557 222</div>
+        </div>
+        <div class="item">
+          <h3>Keiren Curnow</h3>
+          <div class="meta">Assistant Principal — Our Lady of the Sacred Heart College</div>
+          <div class="muted">📱 0410 838 897</div>
+        </div>
+      </section>
+    </main>
+
+    <p class="print-note">Tip: For a clean PDF in Chrome: click **Print / Save as PDF** → **More settings** → **uncheck "Headers and footers"**.</p>
+    <footer>© <span id="y"></span> Patrick Johnson. All rights reserved.</footer>
   </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    document.getElementById('printBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      // Optional inline reminder for header/footer toggle
+      const note = document.createElement('div');
+      note.textContent = 'In the print dialog, turn OFF "Headers and footers" for a clean export.';
+      Object.assign(note.style, {position:'fixed', bottom:'12px', left:'12px', background:'rgba(17,24,39,0.9)', color:'#fff', padding:'8px 10px', borderRadius:'8px', zIndex:'99999', fontSize:'12px'});
+      document.body.appendChild(note);
+      setTimeout(()=>window.print(), 60);
+      setTimeout(()=>note.remove(), 4000);
+    });
+  </script>
 </body>
 </html>
